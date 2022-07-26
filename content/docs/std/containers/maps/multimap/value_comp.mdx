@@ -1,0 +1,78 @@
+---
+title:					multimap<...>::value_comp() method
+sidebar_label:			value_comp( )
+description:			multimap<...>::value_comp() method C++ documentation
+hide_title:				true
+tags:					[compare, value_comp, value, comp]
+---
+
+import Columns					from "@site-comps/Columns";
+import SwitchView				from "@site-comps/SwitchView";
+import SymbolTable, { Symbol }	from "@site-comps/SymbolTable";
+
+<!----------------- Codes ---------------------->
+
+<!-- value_comp() -->
+import Method_SinceCpp98 	from './_codes/value_comp/since-cpp98.mdx';
+
+import ValueComp_Constructor 	from './_codes/value_comp/other/value-comp-constructor.mdx';
+import ValueComp_CallOperator 	from './_codes/value_comp/other/value-comp-call-operator.mdx';
+
+# std::multimap value_comp() method
+
+<SwitchView content={{
+    'since-cpp98': <Method_SinceCpp98 />,
+    }} />
+
+Returns a function object that compares objects of type `std::multimap::value_type` by comparing the first components of the pairs.
+
+### Member types
+
+<SymbolTable noTraits>
+	<Symbol name={<b><center>Type</center></b>} desc={<b><center>Definition</center></b>}/>
+	<Symbol 
+            name={<>result_type <small>(deprecated in C++17) (removed in C++20)</small></>} 
+            desc={<code>bool</code>}
+        />
+	<Symbol
+			name={<>first_argument_type <small>(deprecated in C++17) (removed in C++20)</small></>}
+			desc="value_type"
+		/>
+	<Symbol
+			name={<>second_argument_type <small>(deprecated in C++17) (removed in C++20)</small></>}
+			desc="value_type"
+		/>
+</SymbolTable>
+
+<SwitchView content={{
+        'until-cpp11': <>
+            These member types are obtained via publicly inheriting <code>std::binary_function&lt;value_type, value_type, bool&gt;</code>.
+        </>
+    }}/>
+
+### Protected member objects
+
+<SymbolTable>
+	<Symbol prot name={<><code>Compare</code> comp</>} desc="the stored comparator"/>
+</SymbolTable>
+
+### Member functions
+
+<SymbolTable>
+	<Symbol prot name="(constructor)" desc={<>constructs a new <code>value_compare</code> object</>}/>
+	<Symbol pub name="operator()" desc={<>compares two values of type <code>value_type</code></>}/>
+</SymbolTable>
+
+<details>
+<summary><code>std::multimap::value_compare::<b>value_compare</b></code></summary>
+<div>
+    <ValueComp_Constructor />
+</div>
+</details>
+
+<details>
+<summary><code>std::multimap::value_compare::<b>operator()</b></code></summary>
+<div>
+    <ValueComp_CallOperator />
+</div>
+</details>
